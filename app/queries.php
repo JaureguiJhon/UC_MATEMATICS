@@ -100,7 +100,7 @@ if ($result->num_rows > 0) {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 10px 0;
         }
 
         .nav-bar a {
@@ -220,12 +220,35 @@ if ($result->num_rows > 0) {
             flex-wrap: wrap;
         }
         .video-container {
-            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .video-container iframe {
-            width: 100%;
-            height: 300px;
+        .video {
+            flex: 1 1 400px;
+            margin: 10px;
+        }
+
+        .video-info {
+            padding: 10px;
+        }
+ 
+        .video-info h3 {
+            margin-top: 0;
+        }
+        .materials {
+            margin: 40px 0;
+        }
+
+        .materials-list a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .materials-list a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -247,17 +270,73 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </nav>
+    <nav>
+        <script>
+            window.addEventListener('mouseover', initLandbot, { once: true });
+            window.addEventListener('touchstart', initLandbot, { once: true });
+            var myLandbot;
+            function initLandbot() {
+            if (!myLandbot) {
+                var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+                s.addEventListener('load', function() {
+                var myLandbot = new Landbot.Livechat({
+                    configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2098746-WIHNYXJDH0ALRCXK/index.json',
+                });
+                });
+                s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+            }
+        </script>
+    </nav>
     <div class="container">
         <div class="response-box">
             <h2>Videos Educativos</h2>
             <div class="video-container">
-                <!-- Video 1: Reemplaza 'https://youtu.be/F-cOiXYBBSw' con el enlace del primer video -->
-                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=RdIb85UHfSc" frameborder="0" allowfullscreen></iframe>
-            </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YFtEaVw5k1A" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h3>Título del Video</h3>
+                    </div>
+                    <p>Breve descripción del contenido del video...</p>
+                </div>
 
-            <div class="video-container">
-                <!-- Video 2: Reemplaza 'https://youtu.be/F-cOiXYBBSw' con el enlace del segundo video -->
-                <iframe width="560" height="315" src="https://youtu.be/F-cOiXYBBSw" frameborder="0" allowfullscreen></iframe>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DLwMMeSh67k" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h3>Otro Título de Video</h3>
+                        <p>Otra breve descripción...</p> 
+                    </div>
+                </div>
+                
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KyjjFYM8aUg" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h3>Título del Video</h3>
+                        <p>Breve descripción del contenido del video...</p>
+                    </div>
+                </div>
+
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/F-cOiXYBBSw" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h3>Título del Video</h3>
+                        <p>Breve descripción del contenido del video...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="materials" style="background-color: #D4E7DE">
+                <h2>Materiales de Estudio</h2>
+
+                <div class="materials-list">
+                    <?php $basePath = "/Matemátics";?>
+                    <a href="<?php echo $basePath; ?>/app/files/05cuadradosmagicos.pdf" target="_blank">Cuadros Magicos</a>
+                    <a href="<?php echo $basePath; ?>/app/files/Ejercicios_Graficos_Circulares_y_Pictogramas.pdf" target="_blank">Ejercicios de Graficos Circulares y Pictogramas</a>
+                    <a href="<?php echo $basePath; ?>/app/files/Ejercicios-de-Ordenamiento-Circular-para-Quinto-de-Primaria.pdf" target="_blank">Ejercicios de Ordenamiento Circular</a>
+                    <a href="<?php echo $basePath; ?>/app/files/Palitos-de-Fósforo-para-Cuarto-de-Primaria.pdf" target="_blank">Ejercicios de Palitos de fósforo</a>
+                    <a href="<?php echo $basePath; ?>/app/files/Sucesos-Probables-e-Improbables-para-Cuarto-de-Primaria.pdf" target="_blank">Sucesos Problables e Improbables</a>
+                </div>
             </div>
         </div>
     </div>
