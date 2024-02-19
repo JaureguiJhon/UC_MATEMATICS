@@ -41,220 +41,15 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <title>MATEMATICS | Generador de Recomendaciones de Marketing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-        }
-
-        input[type="text"] {
-            width: 97%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .nav-bar {
-            list-style: none;
-            background-color: #abcf;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        .nav-bar a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: box-shadow 0.3s;
-            margin-right: 10px;
-            padding: 10px 20px;
-        }
-
-        .nav-bar a:hover {
-            box-shadow: 0 0 5px #000; /* Efecto de resaltado al pasar el cursor */
-        }
-
-        .nav-bar a.active {
-            box-shadow: 0 0 5px #000; /* Efecto de resaltado para la opción activa */
-        }
-
-        .profile-button {
-            cursor: pointer;
-            background-color: #007BFF;
-            color: #fff;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .profile-button:hover {
-            background-color: #0056b3;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            color: black;
-            text-align: center;
-        }
-        
-        .dropdown-content{
-            padding:3px;
-            margin:10px;
-            border-top: 3px;
-            font-size: 13px;
-        }
-        
-        .dropdown-button {
-            display: block;
-            background-color: #fff;
-            color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            margin: 10px 44px;
-            padding: 10px 0;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none;
-            
-        }
-
-        .dropdown-button:hover {
-            background-color: #f0f0f0;
-        }
-
-        .profile-dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .profile-dropdown-item:hover {
-            background-color: #f0f0f0;
-        }
-        
-        .response-box {
-        text-align: center;
-        margin-top: 20px;
-        }
-
-        .response-input {
-        width: 97%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        }
-
-        .form-column > div {
-            flex-basis: 48%;
-        }
-        
-        .form-column {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .video-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .video {
-            flex: 1 1 400px;
-            margin: 10px;
-        }
-
-        .video-info {
-            padding: 10px;
-        }
- 
-        .video-info h3 {
-            margin-top: 0;
-        }
-        .materials {
-            margin: 40px 0;
-        }
-
-        .materials-list a {
-            display: block;
-            margin: 10px 0;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .materials-list a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/queries.css">
+    <link rel="stylesheet" href="./css/myStyles.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/game.css">
 </head>
-
 <body>
-    <div style="text-align: center; margin: 30px;">
+    <div class="content-title">
         <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
     </div>
     <nav class="nav-bar">
@@ -271,33 +66,16 @@ if ($result->num_rows > 0) {
         </div>
     </nav>
     <nav>
-        <script>
-            window.addEventListener('mouseover', initLandbot, { once: true });
-            window.addEventListener('touchstart', initLandbot, { once: true });
-            var myLandbot;
-            function initLandbot() {
-            if (!myLandbot) {
-                var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-                s.addEventListener('load', function() {
-                var myLandbot = new Landbot.Livechat({
-                    configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2098746-WIHNYXJDH0ALRCXK/index.json',
-                });
-                });
-                s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-                var x = document.getElementsByTagName('script')[0];
-                x.parentNode.insertBefore(s, x);
-            }
-            }
-        </script>
     </nav>
-    <div class="container">
+    <div class="content">
         <div class="response-box">
             <h2>Videos Educativos</h2>
+            <!-- VIDEOS -->
             <div class="video-container">
                 <div class="video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/YFtEaVw5k1A" frameborder="0" allowfullscreen></iframe>
                     <div class="video-info">
-                        <h3>Título del Video</h3>
+                        <h3>Aprendiendo a multiplicar. La Multiplicación</h3>
                     </div>
                     <p>Breve descripción del contenido del video...</p>
                 </div>
@@ -326,6 +104,7 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>
+            <!-- MATERIALES DE ESTUDIO -->
             <div class="materials" style="background-color: #D4E7DE">
                 <h2>Materiales de Estudio</h2>
 
@@ -340,6 +119,351 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </div>
+    <div class="content" style="justify-content: center;align-items: center; padding-left: 70px;">
+        <div class="response-box">
+            <div class="materials">
+                <div class="container-game" >
+                    <h2>Ejercicios de Operaciones Matemáticas</h2>
+                    <section class="container-operadores">
+                        <button id="suma" onclick="btnSumar()">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button id="resta" onclick="btnResta()">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <button id="producto" onclick="btnProducto()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <button id="division" onclick="btnDivision()">
+                            <i class="fa-solid fa-divide"></i>
+                        </button>
+                    </section>
+            
+                    <section class="container-operacion">
+                        <span id="num1"></span>
+                        <span id="operacion"></span>
+                        <span id="num2"></span>
+                        <span> = </span>
+                        <input type="text" id="respuesta_usuario">
+                        <button id="corregir" style="color: black;" onclick="corregir()">Corregir</button>
+            
+                    </section>
+            
+                    <section id="msj_correccion">
+            
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <div class="contentSud">
+            <h1>Sudoku</h1>
+            <hr>
+            <h2 id="errors">0</h2>
+
+            <!-- 9x9 board -->
+            <div id="board" style="justify-content: center;align-items: center;"></div>
+            <br>
+            <div id="digits">
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('mouseover', initLandbot, { once: true });
+        window.addEventListener('touchstart', initLandbot, { once: true });
+        var myLandbot;
+        function initLandbot() {
+        if (!myLandbot) {
+            var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+            s.addEventListener('load', function() {
+            var myLandbot = new Landbot.Livechat({
+                configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2098746-WIHNYXJDH0ALRCXK/index.json',
+            });
+            });
+            s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+        }
+    </script>
+    <script>
+        var numSelected = null;
+        var tileSelected = null;
+        
+        var errors = 0;
+        
+        var board = [
+            "--74916-5",
+            "2---6-3-9",
+            "-----7-1-",
+            "-586----4",
+            "--3----9-",
+            "--62--187",
+            "9-4-7---2",
+            "67-83----",
+            "81--45---"
+        ]
+        
+        var solution = [
+            "387491625",
+            "241568379",
+            "569327418",
+            "758619234",
+            "123784596",
+            "496253187",
+            "934176852",
+            "675832941",
+            "812945763"
+        ]
+
+        window.onload = function() {
+            setGame();
+        }
+
+        function setGame() {
+            // Digits 1-9
+            for (let i = 1; i <= 9; i++) {
+                //<div id="1" class="number">1</div>
+                let number = document.createElement("div");
+                number.id = i
+                number.innerText = i;
+                number.addEventListener("click", selectNumber);
+                number.classList.add("number");
+                document.getElementById("digits").appendChild(number);
+            }
+
+            // Board 9x9
+            for (let r = 0; r < 9; r++) {
+                for (let c = 0; c < 9; c++) {
+                    let tile = document.createElement("div");
+                    tile.id = r.toString() + "-" + c.toString();
+                    if (board[r][c] != "-") {
+                        tile.innerText = board[r][c];
+                        tile.classList.add("tile-start");
+                    }
+                    if (r == 2 || r == 5) {
+                        tile.classList.add("horizontal-line");
+                    }
+                    if (c == 2 || c == 5) {
+                        tile.classList.add("vertical-line");
+                    }
+                    tile.addEventListener("click", selectTile);
+                    tile.classList.add("tile");
+                    document.getElementById("board").append(tile);
+                }
+            }
+        }
+
+        function selectNumber(){
+            if (numSelected != null) {
+                numSelected.classList.remove("number-selected");
+            }
+            numSelected = this;
+            numSelected.classList.add("number-selected");
+        }
+
+        function selectTile() {
+            if (numSelected) {
+                if (this.innerText != "") {
+                    return;
+                }
+
+                // "0-0" "0-1" .. "3-1"
+                let coords = this.id.split("-"); //["0", "0"]
+                let r = parseInt(coords[0]);
+                let c = parseInt(coords[1]);
+
+                if (solution[r][c] == numSelected.id) {
+                    this.innerText = numSelected.id;
+                }
+                else {
+                    errors += 1;
+                    document.getElementById("errors").innerText = errors;
+                }
+            }
+        }
+
+
+    </script>
+    <script>
+        //seleccionamos los elementos del DOM
+        let num1 = document.querySelector("#num1");
+        let num2 = document.querySelector("#num2");
+        let respuesta_usuario = document.querySelector("#respuesta_usuario");
+        let msj_correccion = document.querySelector("#msj_correccion");
+        let operacion = document.querySelector("#operacion");
+        let operacion_actual;
+        //en n1 y n2 voy a guardar los numeros aletarios de cada operacion
+        let n1, n2;
+
+        //funcion suma
+        function btnSumar() {
+            //limpiamos el div contenedor de las correcciones
+            msj_correccion.innerHTML = "";
+            //agregamos la clase activa al boton suma y la quitamos del resto
+            activarBoton("suma");
+            operacion_actual = "+";
+            //asignamos la operacion suma a la etiqueta
+            operacion.innerHTML = " + ";
+            //generamos los numeros aletarios de la suma
+            nuevaSuma();
+        }
+
+        function nuevaSuma() {
+            //generamos dos numeros aletarios entre 0 y 9
+            n1 = parseInt(Math.random() * 50);
+            n2 = parseInt(Math.random() * 50);
+            //asignamos los numeros a las etiquetas
+            num1.innerHTML = n1;
+            num2.innerHTML = n2;
+            //colocamos el curso en el input
+            respuesta_usuario.focus();
+        }
+
+        //Funcion producto
+        function btnProducto() {
+            //limpiamos el div contenedor de las correcciones
+            msj_correccion.innerHTML = "";
+            //agregamos la clase activa al boton producto y la quitamos del resto
+            activarBoton("producto");
+            operacion_actual = "*";
+            //asignamos la operacion suma a la etiqueta
+            operacion.innerHTML = " x ";
+            //generamos los numeros aletarios de la suma
+            nuevoProducto();
+        }
+
+        function nuevoProducto() {
+            //generamos dos numeros aletarios entre 0 y 9
+            n1 = parseInt(Math.random() * 100);
+            n2 = parseInt(Math.random() * 10);
+            //asignamos los numeros a las etiquetas
+            num1.innerHTML = n1;
+            num2.innerHTML = n2;
+            //colocamos el curso en el input
+            respuesta_usuario.focus();
+        }
+
+        //funcion resta
+        function btnResta() {
+            //limpiamos el div contenedor de las correcciones
+            msj_correccion.innerHTML = "";
+            //agregamos la clase activa al boton suma y la quitamos del resto
+            activarBoton("resta");
+            operacion_actual = "-";
+            //asignamos la operacion suma a la etiqueta
+            operacion.innerHTML = " - ";
+            //generamos los numeros aletarios de la suma
+            nuevaResta();
+        }
+
+        function nuevaResta() {
+            //generamos dun numeros aletarios entre 0-100
+            n1 = parseInt(Math.random() *  100 );
+            //generamos un numero aleatorio entre 0-n1
+            n2 = parseInt(Math.random() * n1);
+            //asignamos los numeros a las etiquetas
+            num1.innerHTML = n1;
+            num2.innerHTML = n2;
+            //colocamos el curso en el input
+            respuesta_usuario.focus();
+        }
+
+        //funcion división
+        function btnDivision() {
+            //limpiamos el div contenedor de las correcciones
+            msj_correccion.innerHTML = "";
+            //agregamos la clase activa al boton suma y la quitamos del resto
+            activarBoton("division");
+            operacion_actual = "/";
+            //asignamos la operacion suma a la etiqueta
+            operacion.innerHTML = " / ";
+            //generamos los numeros aletarios de la suma
+            nuevaDivision();
+        }
+
+        function nuevaDivision() {
+            //aqui voy a guardar los divisores del numero a dividr
+            let divisores = [];
+
+            //generamos un numero aletorio entre 1 y 10
+            n1 = parseInt(Math.random() * 99 + 1);
+
+            //encontramos los divisores del numero generado y lo guardamos en el arreglo
+            for (var i = 1; i <= n1; i++) {
+                if (n1 % i === 0) { //es divisor
+                    divisores.push(i);
+                }
+            }
+
+            //seleccionamos un posiciòn aleatorio de los numeros que son divisores
+            let pos = parseInt(Math.random() * (divisores.length));
+
+            n2 = divisores[pos];
+            num1.innerHTML = n1;
+            num2.innerHTML = n2;
+            respuesta_usuario.focus();
+        }
+
+        //funcion que controla si la respuesta es correcta
+        function corregir() {
+            //si el usuario no ha ingresado nada no continuo
+            if (respuesta_usuario.value == "") {
+                return;
+            }
+
+            let solucion;
+            //armo la operacion que se genero en una variable y veo cual es su reslutado
+            //En este caso el operador + es para concatener las cadenas
+            let operacion = n1 + operacion_actual + n2;
+            solucion = eval(operacion);
+
+            //creo un elemento i para agregar el icono de correcto o incorrecto
+            var i = document.createElement("i");
+            //controlo si coincide lo que el usuario respondio con la solucion
+            if (respuesta_usuario.value == solucion) {
+                i.className = "fa-regular fa-face-grin";
+            } else {
+                i.className = "fa-regular fa-face-frown";
+            }
+
+            //agrego el elemento al contenedor de las correciones
+            msj_correccion.appendChild(i);
+
+            //controlo que tipo de operacion estoy para genera una nueva operacion
+            if (operacion_actual == "+") {
+                nuevaSuma();
+            } else if (operacion_actual == "-") {
+                nuevaResta();
+            } else if (operacion_actual == "*") {
+                nuevoProducto();
+            } else if (operacion_actual == "/") {
+                nuevaDivision();
+            }
+
+            //limpio el input
+            respuesta_usuario.value = "";
+        }
+
+        //agrego al input el evento onkeydown para detectar cuando se presiona Enter Y 
+        //llamar directamente a la funcion corregir()
+        respuesta_usuario.onkeydown = function(e) {
+            var ev = document.all ? window.event : e;
+            if (ev.keyCode == 13) {
+                corregir();
+            }
+        }
+
+
+        //Esta funcion la creamos luego, cuando tengamos listo los estilos
+        function activarBoton(idBoton) {
+            document.getElementById("suma").className = "";
+            document.getElementById("resta").className = "";
+            document.getElementById("producto").className = "";
+            document.getElementById("division").className = "";
+            document.getElementById(idBoton).className = "activado";
+        }
+    </script>
     <script>
         // JavaScript para mostrar y ocultar el menú desplegable
         const profileButton = document.getElementById("profileButton");
@@ -368,5 +492,7 @@ if ($result->num_rows > 0) {
             e.stopPropagation();
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
 </body>
 </html>

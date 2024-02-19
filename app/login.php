@@ -176,6 +176,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <a class="register-link" href="register.php">¿No tienes una cuenta? Regístrate</a>
         <a class="forgot-password-link" href="reset_password_form.php">¿Olvidaste tu contraseña?</a>
+        <?php if(isset($error)) { ?>
+            <p style="color: red; font-size: 14px; background-color:silver; border-radius:5px;font-weight: bold;"><?php echo $error; ?></p>
+        <?php } ?>
     </div>
 </body>
 </html>

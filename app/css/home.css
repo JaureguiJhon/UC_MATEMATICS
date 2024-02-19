@@ -1,0 +1,44 @@
+
+/* Estilos CSS adicionales para personalizar la página */
+h1 {
+    font-size: 36px;
+}
+
+.content {
+    display: flex;
+    margin-top: 40px;
+    background-color: rgba(155, 154, 154, 0.8); /* Color de fondo con transparencia */
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno para el contenido */
+    box-shadow: 0 0 10px rgba(66, 66, 66, 0.2); /* Sombra suave */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.image-box { 
+    width: 600px;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.image-box img {
+    max-width: 100%;
+}
+.text-box {
+    flex: 1; /* El elemento text-box se expandirá para ocupar todo el espacio restante dentro de su contenedor flex (.content) */
+    background-color: #ace3ee; /* Color de fondo */
+    padding-left: 110px; /* Espaciado interno para el contenido */
+    padding-right: 110px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.text-box h2 {
+    color: #333;
+    font-size: 24px;
+}
+.text-box p,
+.text-box li {
+    font-size: 14px; 
+    line-height: 1.5;
+}

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root"; // Cambia esto si tienes un nombre de usuario diferente
 $password = ""; // Cambia esto si has configurado una contraseña
-$database = "matIAs"; // Cambia esto si tu base de datos tiene un nombre diferente
+$database = "Matemátics"; // Cambia esto si tu base de datos tiene un nombre diferente
 
 // Crea una conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $database);

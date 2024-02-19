@@ -31,211 +31,122 @@ if ($result->num_rows > 0) {
     $user_name = $user['name'];
     $user_email = $user['email'];
 } else {
-    // Manejo de error si no se encuentra al usuario
-    // Puedes redirigir o mostrar un mensaje de error
+    
 }
-// A partir de este punto, el usuario ha iniciado sesión y puede ver el contenido de home.php
-
-// Resto del contenido de home.php
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>MATEMATICS | Descubre lo Mejor</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <style>
-        /* Estilos CSS adicionales para personalizar la página */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+    <head>
+        <title>MATEMATICS | Descubre lo Mejor</title>
+        <link rel="stylesheet" href="./css/home.css">
+        <link rel="stylesheet" href="./css/myStyles.css">
+        <link rel="stylesheet" href="./css/estilo.css">
+    </head>
+    <body>
+        <div>
+            <div class="content-title">
+                <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
+            </div>
+            <nav class="nav-bar">
+                <a href="about.php">Contactos</a>
+                <a href="queries.php">Asesoria</a>
+                <a class="active" href="home.php">Inicio</a>
+                <div class="profile-button" id="profileButton"><?= strtoupper(substr($user_name, 0, 1)); ?></div>
+                <div class="dropdown" id="dropdown">
+                    <div class="dropdown-content">
+                        <p><strong>Nombre:</strong> <?php echo $user_name; ?></p>
+                        <p><strong>Correo:</strong> <?php echo $user_email; ?></p>
+                        <button class="dropdown-button" id="logoutButton">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <nav>
+            <script>
+                window.addEventListener('mouseover', initLandbot, { once: true });
+                window.addEventListener('touchstart', initLandbot, { once: true });
+                var myLandbot;
+                function initLandbot() {
+                if (!myLandbot) {
+                    var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+                    s.addEventListener('load', function() {
+                    var myLandbot = new Landbot.Livechat({
+                        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2098746-WIHNYXJDH0ALRCXK/index.json',
+                    });
+                    });
+                    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+                }
+            </script>
+        </nav>
+        <script>
+            // JavaScript para mostrar y ocultar el menú desplegable
+            const profileButton = document.getElementById("profileButton");
+            const dropdown = document.getElementById("dropdown");
+            const logoutButton = document.getElementById("logoutButton");
 
-        h1 {
-            font-size: 36px;
-        }
+            profileButton.addEventListener("click", function(e) {
+                e.stopPropagation(); // Evita que se cierre al hacer clic en el botón
+                dropdown.style.display = "block";
+            });
 
-        .nav-bar {
-            list-style: none;
-            background-color: #abcf;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 0;
-        }
+            logoutButton.addEventListener("click", function() {
+                // Redirige al usuario a la página de cerrar sesión (ajusta la URL según tu configuración)
+                window.location.href = "logout.php";
+            });
 
-        .nav-bar a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: box-shadow 0.3s;
-        }
+            // Cierra el menú desplegable si se hace clic en otra parte de la página
+            document.addEventListener("click", function(e) {
+                if (e.target !== profileButton) {
+                    dropdown.style.display = "none";
+                }
+            });
 
-        .nav-bar a:hover {
-            box-shadow: 0 0 5px #000; /* Efecto de resaltado al pasar el cursor */
-        }
-
-        .nav-bar a.active {
-            box-shadow: 0 0 5px #000; /* Efecto de resaltado para la opción activa */
-        }
-        .profile-button {
-            cursor: pointer;
-            background-color: #007BFF;
-            color: #fff;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .profile-button:hover {
-            background-color: #0056b3;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 50px;  /*Pocicion cardinal en la pantalla (y)*/
-            right: 10px; /*Pocicion cardinal en la pantalla (x)*/
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            color: black;
-            text-align: center;
-        }
-        
-        .dropdown-content{
-            padding:3px;
-            margin:10px;
-            border-top: 3px;
-            font-size: 13px; /*Tamaño de letra */
-        }
-        
-        .dropdown-button {
-            display: block;
-            background-color: #fff;
-            color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            margin: 10px 44px;
-            padding: 10px 0;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none;
-            
-        }
-
-        .dropdown-button:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Estilos del menú desplegable -good */
-        .profile-dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .profile-dropdown-item:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
-</head>
-<body>
-    <div style="text-align: center; margin: 30px;">
-        <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
-    </div>
-    <nav class="nav-bar">
-        <a href="about.php">Contactos</a>
-        <a href="queries.php">Asesoria</a>
-        <a class="active" href="home.php">Inicio</a>
-        <div class="profile-button" id="profileButton"><?= strtoupper(substr($user_name, 0, 1)); ?></div>
-        <div class="dropdown" id="dropdown">
-            <div class="dropdown-content">
-                <p><strong>Nombre:</strong> <?php echo $user_name; ?></p>
-                <p><strong>Correo:</strong> <?php echo $user_email; ?></p>
-                <button class="dropdown-button" id="logoutButton">Cerrar Sesión</button>
+            // Evita que se cierre al hacer clic dentro del menú desplegable
+            dropdown.addEventListener("click", function(e) {
+                e.stopPropagation();
+            });
+        </script>
+        <div class="header">
+            <h1 style="color:white">Bienvenido a <span style="color: #FF5733;">Matematics</span></h1>
+            <p>Descubre lo mejor que tenemos para ti</p>
+        </div>
+        <div class="content">
+            <div class="image-box">
+                <img src="ImgIndex.png" alt="Estudiante de matemáticas">
+            </div>
+            <div class="text-box" style="overflow: auto; height:500px;">
+                <h2>¿Para qué sirven las matemáticas?</h2>
+                <p>
+                    Las matemáticas sirven para muchas cosas en nuestra vida diaria. Por ejemplo, 
+                    las usamos para:
+                </p>
+                <ul>
+                    <li>Contar objetos</li>
+                    <li>Medir y comparar cosas</li>  
+                    <li>Entender formas y figuras</li>
+                    <li>Resolver problemas</li>
+                    <li>Jugar con números</li>
+                    <li>Analizar información</li>
+                    <li>Tomar buenas decisiones</li>
+                </ul>
+                <p>
+                    Las matemáticas nos ayudan a pensar mejor y a entender el mundo a nuestro 
+                    alrededor. ¡Son muy importantes e interesantes! Cuando aprendes matemáticas
+                    estás desarrollando una habilidad muy valiosa.
+                </p>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cwq4dRBWcr8" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h3>¿Para qué sirven las matemáticas? Eduardo Sáenz de Cabezón, matemático</h3>
+                    </div>
+                    <p>En este vídeo, Eduardo Sáenz de Cabezón contagia su emoción por las matemáticas y explica por qué “somos seres matemáticos”</p>
+                </div>
+            </div>
             </div>
         </div>
-    </nav>
-    <nav>
-        <script>
-            window.addEventListener('mouseover', initLandbot, { once: true });
-            window.addEventListener('touchstart', initLandbot, { once: true });
-            var myLandbot;
-            function initLandbot() {
-            if (!myLandbot) {
-                var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-                s.addEventListener('load', function() {
-                var myLandbot = new Landbot.Livechat({
-                    configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2098746-WIHNYXJDH0ALRCXK/index.json',
-                });
-                });
-                s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-                var x = document.getElementsByTagName('script')[0];
-                x.parentNode.insertBefore(s, x);
-            }
-            }
-        </script>
-    </nav>
-    <div>
-        <p></p>
-    </div>
-    <script>
-        // JavaScript para mostrar y ocultar el menú desplegable
-        const profileButton = document.getElementById("profileButton");
-        const dropdown = document.getElementById("dropdown");
-        const logoutButton = document.getElementById("logoutButton");
-
-        profileButton.addEventListener("click", function(e) {
-            e.stopPropagation(); // Evita que se cierre al hacer clic en el botón
-            dropdown.style.display = "block";
-        });
-
-        logoutButton.addEventListener("click", function() {
-            // Redirige al usuario a la página de cerrar sesión (ajusta la URL según tu configuración)
-            window.location.href = "logout.php";
-        });
-
-        // Cierra el menú desplegable si se hace clic en otra parte de la página
-        document.addEventListener("click", function(e) {
-            if (e.target !== profileButton) {
-                dropdown.style.display = "none";
-            }
-        });
-
-        // Evita que se cierre al hacer clic dentro del menú desplegable
-        dropdown.addEventListener("click", function(e) {
-            e.stopPropagation();
-        });
-    </script>
-    <header>
-        <h1 style="color:white">Bienvenido a <span style="color: #FF5733;">Matematics</span></h1>
-        <p>Descubre lo mejor que tenemos para ti</p>
-    </header>
-</body>
+        </div>
+    </body>
 </html>

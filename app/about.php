@@ -45,125 +45,13 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!-- Agrega Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/myStyles.css">
+    <link rel="stylesheet" href="./css/estilo.css">
     <style>
         /* Estilos CSS adicionales para personalizar la página */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
 
         h1 {
             font-size: 36px;
-        }
-
-        .nav-bar {
-            list-style: none;
-            background-color: #abcf;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        .nav-bar a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: box-shadow 0.3s;
-        }
-
-        .nav-bar a:hover {
-            box-shadow: 0 0 5px #000; /* Efecto de resaltado al pasar el cursor */
-        }
-
-        .nav-bar a.active {
-            box-shadow: 0 0 5px #000; /* Efecto de resaltado para la opción activa */
-        }
-        .profile-button {
-            cursor: pointer;
-            background-color: #007BFF;
-            color: #fff;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .profile-button:hover {
-            background-color: #0056b3;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 50px;  /*Pocicion cardinal en la pantalla (y)*/
-            right: 10px; /*Pocicion cardinal en la pantalla (x)*/
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            color: black;
-            text-align: center;
-        }
-        
-        .dropdown-content{
-            padding:3px;
-            margin:10px;
-            border-top: 3px;
-            font-size: 13px; /*Tamaño de letra */
-        }
-        
-        .dropdown-button {
-            display: block;
-            background-color: #fff;
-            color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            margin: 10px 44px;
-            padding: 10px 0;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none;
-            
-        }
-
-        .dropdown-button:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Estilos del menú desplegable -good */
-        .profile-dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .profile-dropdown-item:hover {
-            background-color: #f0f0f0;
         }
         .social-icons {
             list-style: none;
@@ -184,10 +72,18 @@ if ($result->num_rows > 0) {
         .social-icons a:hover {
             color: #0056b3;
         }
+        .content{
+            background-color: rgba(155, 154, 154, 0.8); /* Color de fondo con transparencia */
+            border-radius: 30px; /* Bordes redondeados */
+            padding: 20px; /* Espaciado interno para el contenido */
+            box-shadow: 0 0 10px rgba(66, 66, 66, 0.2); /* Sombra suave */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
     </style>
 </head>
 <body>
-    <div style="text-align: center; margin: 30px;">
+    <div class="content-title">
         <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
     </div>
     <nav class="nav-bar">
@@ -203,12 +99,6 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </nav>
-    <nav>
-
-    </nav>
-    <div>
-        <p></p>
-    </div>
     <script>
         // JavaScript para mostrar y ocultar el menú desplegable
         const profileButton = document.getElementById("profileButton");
@@ -237,19 +127,20 @@ if ($result->num_rows > 0) {
             e.stopPropagation();
         });
     </script>
-    <header>
+    <div class="header">
         <h1 style="color:white">Buscas como realizar tus tareas...?</h1>
-    </header>
-    <h1 style='text-align: center'>CONTACTANOS</h1>
-    <br><br><br><br><br><br>
-    <p style='text-align: center'><i class="fas fa-envelope"> contactos@matematics.com</i></p>
-    
-    <ul class="social-icons">
-        <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
-        <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://api.whatsapp.com/send?phone=" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-    </ul>
-
+    </div>
+    <div class="content">
+        <h1 style='text-align: center;margin-bottom:200px'>CONTACTANOS</h1>
+        
+        <p style='text-align: center'><i class="fas fa-envelope"> contactos@matematics.com</i></p>
+        
+        <ul class="social-icons">
+            <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -154,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="register-container">
-        <h1>Regístrate en <span style="color: #FF5733;">matIAs</span></h1>
+        <h1>Regístrate en <span style="color: #FF5733;">Matematics</span></h1>
         <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
         <form method="post" action="register.php">
             <label for="name">Nombre:</label>
