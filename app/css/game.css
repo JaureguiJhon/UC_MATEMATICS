@@ -21,7 +21,7 @@
 .tile {
     width: 48px; 
     height: 48px;
-    border: 1px solid lightgray;
+    border: 1px solid rgba(211, 211, 211, 0.916);
 
     /* Text */
     font-size: 20px;
