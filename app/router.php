@@ -25,12 +25,6 @@ if (isset($_GET['page'])) {
         case 'reset_password_form':
             require_once('reset_password_form.php');
             break;
-        case 'recover_account':
-            require_once('recover_account.php');
-            break;
-        case 'process_recovery':
-            require_once('process_recovery.php');
-            break;
         case 'logout': // Nueva entrada para el cierre de sesión
             require_once('controllers/logoutController.php'); // Incluye el controlador del cierre de sesión
             break;

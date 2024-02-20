@@ -62,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin: 0;
             padding: 0;
         }
-
         .nav-bar {
             list-style: none;
             background-color: #abcf;
@@ -72,7 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: center;
             padding: 10px 0;
         }
-
         .nav-bar a {
             text-decoration: none;
             color: #fff;
@@ -82,15 +80,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 5px;
             transition: box-shadow 0.3s;
         }
-
         .nav-bar a:hover {
             box-shadow: 0 0 5px #000; /* Efecto de resaltado al pasar el cursor */
         }
-
         .nav-bar a.active {
             box-shadow: 0 0 5px #000; /* Efecto de resaltado para la opción activa */
         }
-
         .login-container {
             background-color: #fff;
             padding: 20px;
@@ -100,22 +95,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
             margin: 40px auto;
         }
-
         h1 {
             font-size: 24px;
             color: #333;
         }
-
         form {
             margin-top: 20px;
         }
-
         label {
             display: block;
             margin-top: 10px;
             font-weight: bold;
         }
-
         input[type="text"],
         input[type="password"] {
             width: 93%;
@@ -124,7 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 1px solid #ccc;
             border-radius: 3px;
         }
-
         button {
             display: block;
             width: 100%;
@@ -137,20 +127,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             cursor: pointer;
             margin-top: 15px;
         }
-
         .register-link {
             text-decoration: none;
             color: #333;
             font-weight: bold;
             margin-top: 10px;
         }
-
         .forgot-password-link {
             text-decoration: underline;
             color: #333;
             margin-top: 10px;
         }
-        
     </style>
 </head>
 <body>
@@ -159,11 +146,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="nav-bar">
         <a href="index.php">Inicio</a>
-        <!--<a href="about.php">Nosotros</a>-->
         <a href="register.php">Registro</a>
         <a class="active" href="login.php">Login</a>
     </div>
-
     <div class="login-container">
         <h1>Iniciar Sesión en <span style="color: #78A490;">Matematics</span></h1>
         <form method="post" action="login.php">
