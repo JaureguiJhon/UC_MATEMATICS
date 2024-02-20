@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('includes/db.php'); // Asegúrate de incluir la conexión a la base de datos
+require('./includes/db.php'); // Asegúrate de incluir la conexión a la base de datos
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -16,25 +16,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $result->fetch_assoc();
 
     if ($user && $respuesta_seguridad == $user['respuesta_seguridad']) {
-        // Genera un token único y almacénalo en la base de datos (puedes usar uniqid() u otra función)
-        $reset_token = uniqid();
-        $sql = "UPDATE users SET reset_token = ? WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("si", $reset_token, $user['id']);
-        $stmt->execute();
-
-        // Envía un correo electrónico con un enlace que incluye el token
-        // Aquí debes usar una biblioteca de envío de correos electrónicos como PHPMailer
-
-        // Redirige al usuario a una página de confirmación
-        header("Location: update_pass.php");
-        exit;
+        // Verifica si se envió una nueva contraseña
+        if(isset($_POST["new_password"]) && !empty($_POST["new_password"])) {
+            // Actualiza la contraseña en la base de datos
+            $new_password = password_hash($_POST["new_password"], PASSWORD_DEFAULT); // Hash de la nueva contraseña
+            $sql_update = "UPDATE users SET password = ? WHERE id = ?";
+            $stmt_update = $conn->prepare($sql_update);
+            $stmt_update->bind_param("si", $new_password, $user['id']);
+            $stmt_update->execute();
+            
+            // Redirige al usuario a una página de confirmación
+            header("Location: login.php");
+            exit;
+        } else {
+            $error = "Por favor, ingresa una nueva contraseña.";
+        }
     } else {
         $error = "Correo electrónico o respuesta de seguridad incorrectos. Por favor, intenta de nuevo.";
     }
-    /*
-    $stmt->close();
-    $db->close();*/
 }
 ?>
 
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MatIAs | Recuperación de Contraseña</title>
+    <title>Matematics | Recuperación de Contraseña</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <style>
         /* Estilos CSS para la página de recuperación de contraseña */
@@ -146,15 +145,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div style  z="text-align: center; margin: 40px;">
-        <h1 style="font-size: 36px"><span style="color: #FF5733;">matIAs</span></h1>
+        <h1 style="font-size: 36px"><span style="color: #FF5733;">MATEMATICS</span></h1>
     </div>
     <div class="nav-bar">
         <a href="index.php">Inicio</a>
-        <!--<a href="about.php">Nosotros</a>-->
         <a href="register.php">Registro</a>
         <a class="active" href="login.php">Login</a>
     </div>
     <div class="container">
+        <h1>Recuperación de Contraseña</h1>
+        <?php if(isset($error)) { ?>
+            <p style="color: red;"><?php echo $error; ?></p>
+        <?php } ?>
+        <form method="post" action="reset_password_form.php">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="respuesta_seguridad">Respuesta de Seguridad:</label>
+            <input type="text" name="respuesta_seguridad" id="respuesta_seguridad" required>
+            
+            <label for="new_password">Nueva Contraseña:</label>
+            <input type="password" name="new_password" id="new_password" required>
+            
+            <button type="submit">Recuperar Contraseña</button>
+        </form>
+    </div>
+    <!-- <div class="container">
         <h1>Recuperación de Contraseña</h1>
         <p>Ingresa tu dirección de correo electrónico y respuesta de seguridad para recuperar tu contraseña.</p>
         <form method="post" action="reset_password_form.php">
@@ -166,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <button type="submit">Recuperar Contraseña</button>
         </form>
-    </div>
+    </div> -->
 </body>
 </html>
 

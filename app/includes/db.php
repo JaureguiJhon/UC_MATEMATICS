@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root"; // Cambia esto si tienes un nombre de usuario diferente
 $password = ""; // Cambia esto si has configurado una contraseña
-$database = "Matemátics"; // Cambia esto si tu base de datos tiene un nombre diferente
+$database = "matematics"; // Cambia esto si tu base de datos tiene un nombre diferente
 
 // Crea una conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $database);
@@ -22,11 +22,6 @@ $sql = "INSERT INTO users (email, password, respuesta_seguridad) VALUES (?, ?, ?
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", $email, $password, $respuestaSeguridad);
 
-if ($stmt->execute()) {
-    echo "Registro de usuario insertado correctamente.";
-} else {
-    echo "Error al insertar el registro: " . $stmt->error;
-}
 /*
 $stmt->close();
 $conn->close();*/
