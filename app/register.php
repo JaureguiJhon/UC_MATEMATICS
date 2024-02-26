@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div style="text-align: center; margin: 40px;">
-        <h1 style="font-size: 36px"><span style="color: #FF5733;">MATEMATICS</span></h1>
+        <h1 style="font-size: 36px"><span style="color: #FF5733;">MATHEMATICS</span></h1>
     </div>
     <div class="nav-bar">
         <a href="index.php">Inicio</a>
