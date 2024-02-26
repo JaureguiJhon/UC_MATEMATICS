@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Matematics | Descubre lo Mejor</title>
+    <title>Mathematics | Descubre lo Mejor</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!-- Agrega Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -84,7 +84,7 @@ if ($result->num_rows > 0) {
 </head>
 <body>
     <div class="content-title">
-        <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
+        <h1><span style="color: #FF5733;">MATHEMATICS</span></h1>
     </div>
     <nav class="nav-bar">
         <a class="active" href="about.php">Conatactos</a>
@@ -133,7 +133,7 @@ if ($result->num_rows > 0) {
     <div class="content">
         <h1 style='text-align: center;margin-bottom:200px'>CONTACTANOS</h1>
         
-        <p style='text-align: center'><i class="fas fa-envelope"> contactos@matematics.com</i></p>
+        <p style='text-align: center'><i class="fas fa-envelope"> contactos@mathematics.com</i></p>
         
         <ul class="social-icons">
             <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>

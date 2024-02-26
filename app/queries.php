@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>MATEMATICS | Generador de Recomendaciones de Marketing</title>
+    <title>MATHEMATICS | Asesoria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/queries.css">
@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 </head>
 <body>
     <div class="content-title">
-        <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
+        <h1><span style="color: #FF5733;">Mathematics</span></h1>
     </div>
     <nav class="nav-bar">
         <a href="about.php">Conatactos</a>
@@ -67,6 +67,56 @@ if ($result->num_rows > 0) {
     </nav>
     <nav>
     </nav>
+    <h2 class="content">Juegos interactivos</h2>
+    <div class="content" style="justify-content: center;align-items: center; padding-left: 70px;">
+        <div class="response-box">
+            <div class="materials">
+                <div class="container-game" >
+                    <h2>Ejercicios de Operaciones Matemáticas</h2>
+                    <section class="container-operadores">
+                        <button id="suma" onclick="btnSumar()">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button id="resta" onclick="btnResta()">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <button id="producto" onclick="btnProducto()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <button id="division" onclick="btnDivision()">
+                            <i class="fa-solid fa-divide"></i>
+                        </button>
+                    </section>
+            
+                    <section class="container-operacion">
+                        <span id="num1"></span>
+                        <span id="operacion"></span>
+                        <span id="num2"></span>
+                        <span> = </span>
+                        <input type="text" id="respuesta_usuario">
+                        <button id="corregir" style="color: black;" onclick="corregir()">Corregir</button>
+            
+                    </section>
+            
+                    <section id="msj_correccion">
+            
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <div class="contentSud">
+            <h1>Sudoku</h1>
+            <hr>
+            <h2 id="errors">0</h2>
+
+            <!-- 9x9 board -->
+            <div id="board" style="justify-content: center;align-items: center;"></div>
+            <br>
+            <div id="digits">
+            </div>
+        </div>
+    </div>
     <div class="content">
         <div class="response-box">
             <h2>Videos Educativos</h2>
@@ -116,55 +166,6 @@ if ($result->num_rows > 0) {
                     <a href="<?php echo $basePath; ?>/app/files/Palitos-de-Fósforo-para-Cuarto-de-Primaria.pdf" target="_blank">Ejercicios de Palitos de fósforo</a>
                     <a href="<?php echo $basePath; ?>/app/files/Sucesos-Probables-e-Improbables-para-Cuarto-de-Primaria.pdf" target="_blank">Sucesos Problables e Improbables</a>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="content" style="justify-content: center;align-items: center; padding-left: 70px;">
-        <div class="response-box">
-            <div class="materials">
-                <div class="container-game" >
-                    <h2>Ejercicios de Operaciones Matemáticas</h2>
-                    <section class="container-operadores">
-                        <button id="suma" onclick="btnSumar()">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                        <button id="resta" onclick="btnResta()">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <button id="producto" onclick="btnProducto()">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                        <button id="division" onclick="btnDivision()">
-                            <i class="fa-solid fa-divide"></i>
-                        </button>
-                    </section>
-            
-                    <section class="container-operacion">
-                        <span id="num1"></span>
-                        <span id="operacion"></span>
-                        <span id="num2"></span>
-                        <span> = </span>
-                        <input type="text" id="respuesta_usuario">
-                        <button id="corregir" style="color: black;" onclick="corregir()">Corregir</button>
-            
-                    </section>
-            
-                    <section id="msj_correccion">
-            
-                    </section>
-
-                </div>
-            </div>
-        </div>
-        <div class="contentSud">
-            <h1>Sudoku</h1>
-            <hr>
-            <h2 id="errors">0</h2>
-
-            <!-- 9x9 board -->
-            <div id="board" style="justify-content: center;align-items: center;"></div>
-            <br>
-            <div id="digits">
             </div>
         </div>
     </div>

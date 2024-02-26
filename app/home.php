@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MATEMATICS | Descubre lo Mejor</title>
+        <title>Mathematics | Descubre lo Mejor</title>
         <link rel="stylesheet" href="./css/home.css">
         <link rel="stylesheet" href="./css/myStyles.css">
         <link rel="stylesheet" href="./css/estilo.css">
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
     <body>
         <div>
             <div class="content-title">
-                <h1><span style="color: #FF5733;">MATEMATICS</span></h1>
+                <h1><span style="color: #FF5733;">MATHEMATICS</span></h1>
             </div>
             <nav class="nav-bar">
                 <a href="about.php">Contactos</a>
@@ -110,7 +110,7 @@ if ($result->num_rows > 0) {
             });
         </script>
         <div class="header">
-            <h1 style="color:white">Bienvenido a <span style="color: #FF5733;">Matematics</span></h1>
+            <h1 style="color:white">Bienvenido a <span style="color: #FF5733;">Mathematics</span></h1>
             <p>Descubre lo mejor que tenemos para ti</p>
         </div>
         <div class="content">

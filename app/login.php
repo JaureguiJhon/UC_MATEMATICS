@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matematics | Login</title>
+    <title>Mathematics | Login</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <style>
         /* Estilos CSS para la página de inicio de sesión */
@@ -142,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div style="text-align: center; margin: 40px;">
-        <h1 style="font-size: 36px"><span style="color: #FF5733;">MATEMATICS</span></h1>
+        <h1 style="font-size: 36px"><span style="color: #FF5733;">MATHEMATICS</span></h1>
     </div>
     <div class="nav-bar">
         <a href="index.php">Inicio</a>
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a class="active" href="login.php">Login</a>
     </div>
     <div class="login-container">
-        <h1>Iniciar Sesión en <span style="color: #78A490;">Matematics</span></h1>
+        <h1>Iniciar Sesión en <span style="color: #78A490;">Mathematics</span></h1>
         <form method="post" action="login.php">
             <label for="email">Correo Electrónico:</label>
             <input type="text" name="email" id="email" required>

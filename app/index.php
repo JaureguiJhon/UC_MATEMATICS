@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matematics | Inicio</title>
+    <title>Mathematics | Inicio</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <style>
         /* Estilos CSS adicionales para personalizar la página */
@@ -101,7 +101,7 @@
 </head>
 <body>
     <div style="text-align: center; margin: 40px;">
-        <h1 >Bienvenido a <span style="color: #FF5733;">MATEMATICS</span></h1>
+        <h1 >Bienvenido a <span style="color: #FF5733;">MATHEMATICS</span></h1>
     </div>
     <div class="nav-bar">
         <a class="active" href="index.php">Inicio</a>
